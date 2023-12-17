@@ -1,0 +1,57 @@
+
+ html, body {
+  margin:0;
+  height:100%;
+}
+
+ #game-intro {
+  background-image: url("https://t4.ftcdn.net/jpg/02/62/24/45/360_F_262244537_RjHfRBucxPyo7o6QetIAQYpd5O3h6cEN.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  width:100%;
+  height:100%; 
+  align-items: center;
+  position: relative;
+}
+ 
+
+#btnStart {
+  position: absolute;
+  background-color: gray;
+  border-width: 3px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  border-color: rgb(175, 173, 173);
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: 600;
+  top: 30%;
+  left:65%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+ }
+
+#dev-by {
+  position: absolute;
+  color: white;
+  font-size: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  top: 90%;
+  left: 80%;
+  
+}
+
+#instructions {
+  position: absolute;
+  display: block;
+  color: white;
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+  top: 40%;
+  left: 40%;
+  padding: 50;
+  text-align: center;
+ 
+}
