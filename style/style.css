@@ -1,18 +1,26 @@
 
-html, body {
-  margin:0;
-  height:100%;
+body {
+  background-color: rgb(68, 140, 131);
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+  cursor: pointer;
+ 
 }
 
  #game-intro {
-  display: block;
-  background-image: url("https://t4.ftcdn.net/jpg/02/62/24/45/360_F_262244537_RjHfRBucxPyo7o6QetIAQYpd5O3h6cEN.jpg");
-  background-size:cover;
-  background-repeat: no-repeat;
-  width:100%;
-  height:100%; 
+  display: none;
+  width: 100%;
+  height: 100%;
   align-items: center;
-  position: relative;
+  justify-content: center;
+  position:absolute;
+  border: none;
+}
+
+#game-intro img{
+  width: 100%;
 }
  
 
@@ -29,8 +37,7 @@ html, body {
   font-weight: 600;
   top: 30%;
   left:65%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+ 
 
  }
 
@@ -51,70 +58,36 @@ html, body {
   font-size: 18px;
   font-family: 'Courier New', Courier, monospace;
   top: 40%;
-  left: 40%;
-  padding: 50;
+  left: 50%;
+  padding: 50px;
   text-align: center;
  
 }
 
 #game-container {
-  display: none;
-  background-color: rgb(246, 241, 246);
-  background-size:cover;
-  width:100%;
-  height:100%; 
-  align-items: center;
-  position: relative;
-}
-
-.alphabet {
-  padding: 8px;
-  margin: 8px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  position: relative;
-  border: 3px solid black;
-  background-color: rgb(145, 11, 145);
   align-items: center;
-  width: 30%;
-  height: 27%; 
-  top: 40%;
-  left: 55%;
-  right:5%;
+  align-content: center;
+  justify-content: space-around;
+  background-color: white;
+  padding: 40px 40px;
+  border-radius: 10px;
+  gap: 70px;
+  margin: 20px 20px;
   
 }
-
-.alphabet button{
-  background-color: rgb(242, 211, 242);
-  border-width: 3px;
-  padding: 10px 15px;
-  border-color: rgb(177, 45, 177);
-  color: black;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 20px;
-  font-weight: bold;
+#block1 {
+  padding: 40px 20px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-self: center;
 }
-
-.alphabet button:hover {
-  background-color: rgb(240, 149, 240);
+#block1 img{
+  max-width: 300px;
+  padding-bottom: 20px;
 }
-
-#hint {
-  color: black;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: medium;
-  font-weight: bold;
-  font-style: oblique;
-  text-align: center;
-  position: relative;
-  left: 55%;
-  right:5%;
-  top: 40%;
-  width: 30%;
-}
-
-#chances {
+.chances {
   color: red;
   font-family: 'Courier New', Courier, monospace;
   font-size: x-large;
@@ -122,9 +95,69 @@ html, body {
   font-style: normal;
   text-align: center;
   position: relative;
-  left: 55%;
-  right:5%;
-  top: 40%;
-  width: 30%;
+}
+#block1 #lines{
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  
+}
+#block1 #lines li {
+  font-family: 'Courier New', Courier, monospace;
+  width: 20px;
+  border-bottom: solid 2px black;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: x-large;
+  font-weight: bolder;
+  
+}
 
+#block2{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-self: center;
+  max-width: 40%;
+}
+#block2 #hint{
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'Courier New', Courier, monospace;
+}
+ #block2 .alphabet{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+
+}
+.alphabet button{
+  background-color:rgb(10, 196, 174);
+  border-width: 3px;
+  border-radius: 10px;
+  padding: 10px 12px;
+  border-color: rgb(68, 140, 131);
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
+.alphabet button:hover {
+  background-color: rgb(68, 140, 131);
+}
+
+#game-over{
+  display: none;
 }
