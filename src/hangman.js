@@ -3,7 +3,7 @@ class HangmanGame {
         this.startScreen = document.getElementById("game-intro");
         this.gameScreen = document.getElementById("game-container");
         this.gameEndScreen = document.getElementById("game-over");
-        this.words=allWords
+        this.words=allWords;
         this.lettersGuessed=[];
         this.lettersFailed=0;
         this.pickedWord=[];
@@ -21,6 +21,7 @@ class HangmanGame {
         for(let i=0; i<this.chosenWord.length; i++){
         const ul= document.getElementById("lines")
         const li= document.createElement('li');
+        this.character= document.createTextNode(this.chosenWord[i]);
         ul.appendChild(li)
         } 
     }
@@ -29,21 +30,22 @@ class HangmanGame {
         hintText.innerHTML += `${this.pickedWord.hint}` 
     }
    chekIfCommonLetters(element,letter){
-        for(let i=0; i<this.chosenWord.length; i++){
-            if(this.chosenWord.includes(letter)){
-             return this.lettersGuessed.splice(this.chosenWord[i],0,letter), true
-            }else if(!this.chosenWord.includes(letter)){
+        for(let i=0; i<element.length; i++){
+            if(element.includes(letter.toLowerCase())){
+             return this.lettersGuessed+= letter, true
+             }
+            else if(!element.includes(letter)){
             return this.lettersFailed++ , false
             }
-        }
+        } console.log(this.lettersGuessed)
     }
 
     checkIfFinished(){
         if (this.lettersFailed===6){
             return true
-        }if(this.lettersGuessed===this.pickedWord.split()){
+        }if(this.lettersGuessed===this.pickedWord.split("")){
             return true
-        }if(this.lettersFailed<6 && this.lettersGuessed!==this.pickedWord.split()){
+        }if(this.lettersFailed<6 && this.lettersGuessed!==this.pickedWord.split("")){
             return false
         }
     }

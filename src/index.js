@@ -5,10 +5,9 @@ window.onload= function(){
     const startButton = document.getElementById("btnStart");
     const restartButton= document.getElementById("restart-button");
     startButton.addEventListener("click",function(){
-       startGame() 
+      startGame()
     });
-    
-
+   
     function startGame(){
         hangmanGame.startScreen.style.display= "none";
         hangmanGame.gameScreen.style.display= "flex";
@@ -17,9 +16,27 @@ window.onload= function(){
         hangmanGame.showHint()
             
      }  
-  
-     hangmanGame.startGame()
-}
+     function clickedButton(event){
+      let button= event.target
+      let buttonText= button.innerHTML
+      let element= (hangmanGame.chosenWord).toLowerCase()
+      console.log(buttonText)
+      console.log(element)
+      if(hangmanGame.chekIfCommonLetters(element,buttonText)===false){
+         let chances= document.getElementById("chances");
+         chances.innerHTML= `${hangmanGame.lettersFailed}/6` 
+      }
+      if(hangmanGame.chekIfCommonLetters(element,buttonText)===true){
+         console.log(hangmanGame.lettersGuessed)
+      }
+     } 
+   
+     let buttons= document.querySelectorAll('#myButton')
+     buttons.forEach(function(button){
+      button.addEventListener('click',clickedButton)
+     })
 
- 
 
+   hangmanGame.startGame()
+   hangmanGame.clickedButton()
+ }

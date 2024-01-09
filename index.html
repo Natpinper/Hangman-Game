@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="game-intro">
-        <img src="/images/background intro.jpg" alt="intro"/>
+        <img src="/Hangman-Game/style/images/background intro.jpg" alt="intro"/>
         <button id= "btnStart"> START NEW GAME</button>
         <p id="dev-by">Developped by Natalia Pinto Dec-2023</p>
         <p id="instructions">guess the secret word before the stick figure is hung!</p>
@@ -18,19 +18,18 @@
     </div>
     <div id="game-container">
         <div id="block1">
-            <p class="chances"><strong>0 / 6</strong></p>
-            <img src="/images/Hangman 1.jpg" alt="Hangman1">
+            <p id="chances"><strong>0 / 6</strong></p>
+            <img  id="stickman" src="/Hangman-Game/style/images/Hangman 1.jpg" alt="Hangman1">
             <ul id="lines">
             </ul>
         </div>
         <div id="block2">
             <p id="hint">Hint: </p>
-            <div class="alphabet">
-                <button>A</button><button>B</button><button>C</button><button>D</button><button>E</button><button>F</button><button>G</button>
-                <button>H</button><button>I</button><button>J</button><button>K</button><button>L</button><button>M</button><button>N</button>
-                <button>O</button><button>P</button><button>Q</button><button>R</button><button>S</button><button>T</button><button>U</button>
-                <button>V</button><button>W</button><button>X</button><button>Y</button><button>Z</button>
-            </div>
+            <div id="alphabet">
+                <button id="myButton">A</button><button id="myButton">B</button><button id="myButton" >C</button><button id="myButton">D</button><button id="myButton" >E</button><button id="myButton">F</button><button id="myButton">G</button>
+                <button id="myButton">H</button><button id="myButton">I</button><button id="myButton" >J</button><button id="myButton">K</button><button id="myButton">L</button><button id="myButton">M</button><button id="myButton">N</button>
+                <button id="myButton">O</button><button id="myButton">P</button><button id="myButton">Q</button><button id="myButton" >R</button><button id="myButton">S</button><button id="myButton">T</button><button id="myButton">U</button>
+                <button id="myButton">V</button><button id="myButton">W</button><button id="myButton">X</button><button id="myButton" >Y</button><button id="myButton">Z</button>
         </div>
     </div>
     <div id="game-over">

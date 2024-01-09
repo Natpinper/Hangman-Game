@@ -87,7 +87,7 @@ body {
   max-width: 300px;
   padding-bottom: 20px;
 }
-.chances {
+#chances {
   color: red;
   font-family: 'Courier New', Courier, monospace;
   font-size: x-large;
@@ -131,7 +131,7 @@ body {
   margin-bottom: 20px;
   font-family: 'Courier New', Courier, monospace;
 }
- #block2 .alphabet{
+ #block2 #alphabet{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -140,7 +140,7 @@ body {
   justify-content: center;
 
 }
-.alphabet button{
+#alphabet button{
   background-color:rgb(10, 196, 174);
   border-width: 3px;
   border-radius: 10px;
