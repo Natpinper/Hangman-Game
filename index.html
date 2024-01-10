@@ -32,10 +32,14 @@
                 <button id="myButton">V</button><button id="myButton">W</button><button id="myButton">X</button><button id="myButton" >Y</button><button id="myButton">Z</button>
         </div>
     </div>
-    <div id="game-over">
-        <h1>Game Over</h1>
-        <button id="restart-button">Restart</button>
-    </div>
+    <div id="popup" class="modal">
+        <div class="modal-content">
+          <span id="closeButton" class="close">&times;</span>
+          <h3>Game Over!</h3>
+          <h4 id="endGame"></h4>
+          <p id="message"></p>
+        </div>
+      </div>
   <script src="/Hangman-Game/src/words-list.js"></script>
   <script src="/Hangman-Game/src/hangman.js"></script>
   <script src="/Hangman-Game/src/index.js"></script>

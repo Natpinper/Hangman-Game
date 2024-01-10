@@ -3,11 +3,15 @@ class HangmanGame {
         this.startScreen = document.getElementById("game-intro");
         this.gameScreen = document.getElementById("game-container");
         this.gameEndScreen = document.getElementById("game-over");
+        this.gameOver= document.getElementById("popup");
+        this.endGameText= document.getElementById("endGame");
+        this.message= document.getElementById("message")
         this.words=allWords;
         this.lettersGuessed=[];
         this.lettersFailed=0;
         this.pickedWord=[];
-        this.chosenWord=this.pickedWord.word
+        this.chosenWord=this.pickedWord.word;
+        
         
     }
    
@@ -29,24 +33,27 @@ class HangmanGame {
         const hintText= document.getElementById('hint')
         hintText.innerHTML += `${this.pickedWord.hint}` 
     }
-   chekIfCommonLetters(element,letter){
-        for(let i=0; i<element.length; i++){
-            if(element.includes(letter.toLowerCase())){
-             return this.lettersGuessed+= letter, true
+    chekIfCommonLetters(randomWord,letter){
+        for(let i=0; i<randomWord.length; i++){
+            if(randomWord.includes(letter.toLowerCase())){
+            return true
              }
-            else if(!element.includes(letter)){
-            return this.lettersFailed++ , false
+            else {
+            return false
             }
-        } console.log(this.lettersGuessed)
+        } 
     }
 
     checkIfFinished(){
         if (this.lettersFailed===6){
-            return true
-        }if(this.lettersGuessed===this.pickedWord.split("")){
-            return true
-        }if(this.lettersFailed<6 && this.lettersGuessed!==this.pickedWord.split("")){
-            return false
+            this.gameOver.style.display='flex'
+            this.endGameText.innerHTML=`The correct answer was: ${this.chosenWord.toUpperCase()}` 
+            this.message.innerHTML= 'Sorry, you lost the game. Better luck next time!'
+            
+        }if(this.lettersGuessed.length===this.chosenWord.length){
+            this.gameOver.style.display='flex'
+            this.endGameText.innerHTML= 'Excellent job! Another word conquered!'
         }
+
     }
 }
