@@ -10,11 +10,17 @@
 <body>
     <div id="game-intro">
         <img src="/Hangman-Game/style/images/background intro.jpg" alt="intro"/>
-        <button id= "btnStart"> START NEW GAME</button>
+        <button id= "btnStart">START NEW GAME</button>
         <p id="dev-by">Developped by Natalia Pinto Dec-2023</p>
         <p id="instructions">guess the secret word before the stick figure is hung!</p>
     </div>
-    <div id="level-selection">
+    <div id="levels">
+        <img src="/Hangman-Game/style/images/background intro.jpg" alt="intro"/>
+        <div id="level-selector">
+        <button id="easy">EASY</button>
+        <button id="medium">MEDIUM</button>
+        <button id="hard">HARD</button>
+    </div>
     </div>
     <div id="game-container">
         <div id="block1">
@@ -34,10 +40,11 @@
     </div>
     <div id="popup" class="modal">
         <div class="modal-content">
-          <span id="closeButton" class="close">&times;</span>
+          <span id="closeButton" class="close" onClick="window.location.reload()">&times;</span>
           <h3>Game Over!</h3>
           <h4 id="endGame"></h4>
           <p id="message"></p>
+          <button id="playAgain" onClick="window.location.reload()">PLAY AGAIN</button>
         </div>
       </div>
   <script src="/Hangman-Game/src/words-list.js"></script>

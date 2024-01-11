@@ -6,11 +6,14 @@ class HangmanGame {
         this.gameOver= document.getElementById("popup");
         this.endGameText= document.getElementById("endGame");
         this.message= document.getElementById("message")
-        this.words=allWords;
-        this.lettersGuessed=[];
+        this.chooseLevel= document.getElementById("levels")
+        this.words;
+        this.lettersGuessed=0;
         this.lettersFailed=0;
         this.pickedWord=[];
         this.chosenWord=this.pickedWord.word;
+        this.randomMessageArr=endGameMessage;
+        this.endOfGameMessage
         
         
     }
@@ -21,11 +24,12 @@ class HangmanGame {
     return this.chosenWord= this.pickedWord.word
     }
     
-    createList(){
+    createList(chosenWord){
         for(let i=0; i<this.chosenWord.length; i++){
         const ul= document.getElementById("lines")
         const li= document.createElement('li');
-        this.character= document.createTextNode(this.chosenWord[i]);
+        li.className=`${this.chosenWord[i]}`
+        li.id= "word-letter"
         ul.appendChild(li)
         } 
     }
@@ -34,8 +38,15 @@ class HangmanGame {
         hintText.innerHTML += `${this.pickedWord.hint}` 
     }
     chekIfCommonLetters(randomWord,letter){
+        const allLis =  document.getElementsByClassName('word-letter')
         for(let i=0; i<randomWord.length; i++){
             if(randomWord.includes(letter.toLowerCase())){
+                document.querySelectorAll(`.${letter.toLowerCase()}`)
+                for(let j=0; j<document.querySelectorAll(`.${letter.toLowerCase()}`).length; j++){
+                    document.querySelectorAll(`.${letter.toLowerCase()}`)[j].innerHTML = letter.toLowerCase()
+                    
+                }
+                console.log(this.lettersGuessed)
             return true
              }
             else {
@@ -44,16 +55,21 @@ class HangmanGame {
         } 
     }
 
+    randomEndOfGameText(){
+        const randomMessage= Math.floor(Math.random()*this.randomMessageArr.length)
+        this.endOfGameMessage = this.randomMessageArr[randomMessage]
+        return this.endGameText.innerHTML= this.endOfGameMessage
+    }
     checkIfFinished(){
         if (this.lettersFailed===6){
             this.gameOver.style.display='flex'
             this.endGameText.innerHTML=`The correct answer was: ${this.chosenWord.toUpperCase()}` 
             this.message.innerHTML= 'Sorry, you lost the game. Better luck next time!'
             
-        }if(this.lettersGuessed.length===this.chosenWord.length){
+        }if(this.lettersGuessed===this.chosenWord.length){
             this.gameOver.style.display='flex'
-            this.endGameText.innerHTML= 'Excellent job! Another word conquered!'
+            this.randomEndOfGameText()
+           
         }
-
     }
 }

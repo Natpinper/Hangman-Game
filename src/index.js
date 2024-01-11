@@ -3,22 +3,57 @@ window.onload= function(){
     hangmanGame.startScreen.style.display= "flex";
     hangmanGame.gameScreen.style.display= "none";
     const startButton = document.getElementById("btnStart");
+    const easyButton= document.getElementById("easy");
+    const mediumButton= document.getElementById("medium");
+    const hardButton= document.getElementById("hard")
     startButton.addEventListener("click",function(){
-      startGame()
-      
+      initializeGame()
     });
-    /*document.addEventListener('DOMContentLoaded',function(){
-      gameOver()
-    });*/
-   
-    function startGame(){
+
+    function initializeGame(){
+      hangmanGame.startScreen.style.display= "none";
+      hangmanGame.chooseLevel.style.display= "flex";
+
+      easyButton.addEventListener("click", function(){
+         startGameEasy()
+      } )
+      mediumButton.addEventListener("click", function(){
+         startGameMedium()
+      } )
+
+      hardButton.addEventListener("click", function(){
+         startGameHard()
+      })
+    }
+
+    function startGameEasy(){
         hangmanGame.startScreen.style.display= "none";
+        hangmanGame.chooseLevel.style.display= "none";
         hangmanGame.gameScreen.style.display= "flex";
-        hangmanGame.pickWord(allWords);
-        hangmanGame.createList();
-        hangmanGame.showHint();
-            
+        hangmanGame.words= easy
+        hangmanGame.pickWord(easy);
+        hangmanGame.createList(hangmanGame.chosenWord);
+        hangmanGame.showHint();    
      }  
+     function startGameMedium(){
+      hangmanGame.startScreen.style.display= "none";
+      hangmanGame.chooseLevel.style.display= "none";
+      hangmanGame.gameScreen.style.display= "flex";
+      hangmanGame.words= medium
+      hangmanGame.pickWord(medium);
+      hangmanGame.createList(hangmanGame.chosenWord);
+      hangmanGame.showHint();    
+   } 
+      function startGameHard(){
+         hangmanGame.startScreen.style.display= "none";
+         hangmanGame.chooseLevel.style.display= "none";
+         hangmanGame.gameScreen.style.display= "flex";
+         hangmanGame.words= hard
+         hangmanGame.pickWord(hard);
+         hangmanGame.createList(hangmanGame.chosenWord);
+         hangmanGame.showHint();   
+      }
+   
      function clickedButton(event){
       let button= event.target
       let buttonText= button.innerHTML
@@ -30,7 +65,7 @@ window.onload= function(){
          chances.innerHTML= `${hangmanGame.lettersFailed}/6`
       }
       if(hangmanGame.chekIfCommonLetters(element,buttonText)===true){
-         hangmanGame.lettersGuessed.push(buttonText)
+         hangmanGame.lettersGuessed+=1
       }
       let stickFigure= document.getElementById("stickman")
       if(hangmanGame.lettersFailed===1){
@@ -58,16 +93,13 @@ window.onload= function(){
    }
    
      let buttons= document.querySelectorAll('#myButton')
-     buttons.forEach(function(button){
+      buttons.forEach(function(button){
       button.addEventListener('click',clickedButton)
      })
 
-     
-     
+   hangmanGame.initializeGame()
    hangmanGame.startGame()
    hangmanGame.clickedButton()
-  
    
  }
- 
  

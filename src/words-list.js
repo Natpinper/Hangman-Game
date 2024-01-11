@@ -1,4 +1,4 @@
-const allWords = [
+const easy = [
     {word:'weak' , hint:'lacking the power to perform physically demanding tasks; having little physical strength or energy.' },
     {word:'stay' , hint:'remain in the same place.' },
     {word:'talk' , hint:'speak in order to give information or express ideas or feelings; converse or communicate by spoken words.' },
@@ -63,4 +63,17 @@ const hard = [
     {word:'battlefield' , hint:'the piece of ground on which a battle is or was fought.' },
     {word:'fluctuation' , hint:'an irregular rising and falling in number or amount; a variation.' },
     {word:'spontaneous' , hint:'performed or occurring as a result of a sudden impulse or inclination and without premeditation or external stimulus.' }
+]
+
+const endGameMessage = [
+    "Congratulations! You're a master of Hangman!",
+    "Amazing! You've saved Hangman in style!",
+    "Wow, you're quite the wordsmith!",
+    "You won! The word couldn't defeat you!",
+    "Bravo! You're the king/queen of Hangman!",
+    "Excellent job! Another word conquered!",
+    "Spectacular! That word couldn't get past you!",
+    "Winner! You're unstoppable at Hangman!",
+    "Impressive! No word can stop you!",
+    "You won! You're the Hangman champion!"
 ]
