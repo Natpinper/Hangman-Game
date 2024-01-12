@@ -38,13 +38,17 @@ class HangmanGame {
         hintText.innerHTML += `${this.pickedWord.hint}` 
     }
     chekIfCommonLetters(randomWord,letter){
-        const allLis =  document.getElementsByClassName('word-letter')
+        
         for(let i=0; i<randomWord.length; i++){
+            if(randomWord.charAt(i)===letter.toLowerCase()){
+                
+            }
             if(randomWord.includes(letter.toLowerCase())){
+                
                 document.querySelectorAll(`.${letter.toLowerCase()}`)
                 for(let j=0; j<document.querySelectorAll(`.${letter.toLowerCase()}`).length; j++){
                     document.querySelectorAll(`.${letter.toLowerCase()}`)[j].innerHTML = letter.toLowerCase()
-                    
+                    this.lettersGuessed+=1
                 }
                 console.log(this.lettersGuessed)
             return true

@@ -64,9 +64,9 @@ window.onload= function(){
          let chances= document.getElementById("chances");
          chances.innerHTML= `${hangmanGame.lettersFailed}/6`
       }
-      if(hangmanGame.chekIfCommonLetters(element,buttonText)===true){
-         hangmanGame.lettersGuessed+=1
-      }
+     /* if(hangmanGame.chekIfCommonLetters(element,buttonText)===true){
+         
+      }*/
       let stickFigure= document.getElementById("stickman")
       if(hangmanGame.lettersFailed===1){
          stickFigure.src= "/Hangman-Game/style/images/Hangman 2.jpg"
